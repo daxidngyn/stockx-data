@@ -1,0 +1,25 @@
+{
+  "name": "stockx-scraper",
+  "version": "1.0.0",
+  "description": "Unofficial StockX API to scrape product info utilizing requests/promises",
+  "main": "index.js",
+  "keywords": [
+    "stockx",
+    "request",
+    "promises",
+    "api",
+    "sneakers",
+    "shoes"
+  ],
+  "author": "daxidngyn",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "algoliasearch": "^4.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
