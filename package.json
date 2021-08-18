@@ -1,8 +1,9 @@
 {
-  "name": "stockx-scraper",
+  "name": "stockx-data",
   "version": "1.0.0",
   "description": "Unofficial StockX API to scrape product info utilizing requests/promises",
   "main": "index.js",
+  "bin": "index.js",
   "keywords": [
     "stockx",
     "request",
