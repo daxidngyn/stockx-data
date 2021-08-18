@@ -1,5 +1,8 @@
 const axios = require("axios");
 module.exports = async (product) => {
+  if (typeof product === "object" && product !== null) {
+    product = product.searchKey;
+  }
   const res = await axios.get(
     `https://stockx.com/api/products/${product}?includes=market`,
     {
@@ -22,12 +25,18 @@ module.exports = async (product) => {
   );
   const productDetails = res.data.Product;
 
+  let sizeMap = {};
+  Object.keys(productDetails.children).map((id) => {
+    sizeMap[productDetails.children[id].shoeSize] = id;
+  });
+
   return {
-    name: productDetails.name,
+    name: productDetails.title,
     pid: productDetails.styleId,
     image: productDetails.media.imageUrl,
     uuid: productDetails.uuid,
     size: productDetails.shoeSize,
+    searchKey: productDetails.shortDescription,
     details: {
       retail: productDetails.retailPrice,
       releaseDate: productDetails.releaseDate,
@@ -38,5 +47,6 @@ module.exports = async (product) => {
       description: productDetails.description,
     },
     market: productDetails.market,
+    sizeMap: sizeMap,
   };
 };

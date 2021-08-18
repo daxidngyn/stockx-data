@@ -11,7 +11,6 @@
     "sneakers",
     "shoes"
   ],
-  "author": "daxidngyn",
   "dependencies": {
     "axios": "^0.21.1",
     "algoliasearch": "^4.10.3"
@@ -20,6 +19,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "daxidngyn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daxidngyn/StockX-Scraper.git"
+  },
+  "homepage": "https://github.com/daxidngyn/StockX-Scraper"
 }

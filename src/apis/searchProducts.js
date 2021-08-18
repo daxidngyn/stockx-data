@@ -17,6 +17,7 @@ module.exports = async (query) => {
       pid: product.style_id,
       image: product.media.imageUrl,
       uuid: product.id,
+      searchKey: product.short_description,
       details: {
         retail: product.price,
         releaseDate: product.release_date,
