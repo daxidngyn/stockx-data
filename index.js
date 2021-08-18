@@ -1,3 +1,3 @@
-const StockXApi = require("./src/stockx");
+const StockXData = require("./src/stockx");
 
-module.exports = StockXApi;
+module.exports = StockXData;
