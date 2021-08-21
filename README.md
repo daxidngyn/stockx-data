@@ -35,7 +35,7 @@ const stockX = new StockXData();
    
    //obtaining data specific to size 10s
    stockX.fetchProductDetails(searchedProduct[0]).then((productDetails) => {
-     stockX.fetchProductDetails(res2.sizeMap['10']).then((productDetails2) => {
+     stockX.fetchProductDetails(productDetails.sizeMap['10']).then((productDetails2) => {
        console.log(productDetails2);
      });
    });
