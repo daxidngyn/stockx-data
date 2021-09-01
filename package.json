@@ -13,12 +13,17 @@
     "shoes"
   ],
   "dependencies": {
-    "axios": "^0.21.1",
-    "algoliasearch": "^4.10.3"
+    "algoliasearch": "^4.10.3",
+    "axios": "^0.21.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "author": "metalcamp",
   "license": "MIT",
