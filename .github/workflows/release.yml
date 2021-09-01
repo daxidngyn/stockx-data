@@ -24,11 +24,11 @@ jobs:
             -   name: Lint
                 run: npm run lint-fix --if-present
 
-            #-   name: Test
-            #    run: npm run test:unit --if-present
+            -   name: Test
+                run: npm run test:unit --if-present
 
-            #-   name: Build
-            #    run: npm run build
+            -   name: Build
+                run: npm run build --if-present
 
             -   name: Release
                 env:
