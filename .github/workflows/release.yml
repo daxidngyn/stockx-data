@@ -21,9 +21,6 @@ jobs:
             -   name: Install dependencies
                 run: npx ci
 
-            -   name: Install semantic-release extra plugins
-                run: npm install --save-dev @semantic-release/changelog @semantic-release/git
-
             -   name: Lint
                 run: npm run lint-fix --if-present
 
