@@ -1,20 +1,32 @@
 const searchProducts = require("./apis/searchProducts");
 const fetchProductDetails = require("./apis/fetchProductDetails");
 const fetchApiKey = require("./apis/fetchApiKey");
+const fetchAskPrices = require("./apis/fetchAskPrices");
+const fetchBidPrices = require("./apis/fetchBidPrices");
+const fetchSales = require("./apis/fetchSales");
 
 module.exports = class StockXScraper {
-  async searchProducts(query) {
-    const products = await searchProducts(query);
-    return products;
-  }
+    async searchProducts(query) {
+        return searchProducts(query);
+    }
 
-  async fetchProductDetails(query) {
-    const productDetails = await fetchProductDetails(query);
-    return productDetails;
-  }
+    async fetchProductDetails(query) {
+        return fetchProductDetails(query);
+    }
 
-  async fetchApiKey() {
-    const apiKey = await fetchApiKey();
-    return apiKey;
-  }
+    async fetchApiKey() {
+        return fetchApiKey();
+    }
+
+    async fetchAskPrices(query) {
+        return fetchAskPrices(query);
+    }
+
+    async fetchBidPrices(query) {
+        return fetchBidPrices(query);
+    }
+
+    async fetchSales(query) {
+        return fetchSales(query);
+    }
 };
