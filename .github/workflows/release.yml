@@ -1,37 +1,37 @@
 name: Release
 
 on:
-    push:
-        branches: [ main, beta ]
+  push:
+    branches: [main, beta]
 
 jobs:
-    release:
-        name: Release
-        runs-on: ubuntu-latest
+  release:
+    name: Release
+    runs-on: ubuntu-latest
 
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-            -   name: Setup Node.js
-                uses: actions/setup-node@v1
-                with:
-                    node-version: 16.x
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
 
-            -   name: Install dependencies
-                run: npx ci
+      - name: Install dependencies
+        run: npx ci
 
-            -   name: Lint
-                run: npm run lint-fix --if-present
+      - name: Lint
+        run: npm run lint-fix --if-present
 
-            -   name: Test
-                run: npm run test:unit --if-present
+      - name: Test
+        run: npm run test:unit --if-present
 
-            -   name: Build
-                run: npm run build --if-present
+      - name: Build
+        run: npm run build --if-present
 
-            -   name: Release
-                env:
-                    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-                    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                run: npx semantic-release
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
