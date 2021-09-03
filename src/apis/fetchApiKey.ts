@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 
-module.exports = async () => {
+export default async (): Promise<string> => {
     const res = await axios.get(`https://www.stockx.com/`, {
         headers: {
             Host: "stockx.com",

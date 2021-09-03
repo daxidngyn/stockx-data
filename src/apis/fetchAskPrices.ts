@@ -1,12 +1,10 @@
-const axios = require("axios");
+import axios from "axios";
+import {GetAskPriceResponse} from "../interfaces/Price";
 
-// returns single sku sales
-module.exports = async (product, currency = 'EUR', limit = 250, page = 1) => {
-    if (typeof product === "object" && product !== null) {
-        product = product.searchKey;
-    }
+// returns single sku ask prices
+export default async (product: string, currency = 'EUR', limit = 250, page = 1): Promise<GetAskPriceResponse> => {
     const res = await axios.get(
-        `https://stockx.com/api/rest/v2/products/${product}/activity?state=480&currency=${currency}&limit=${limit}&page=${page}&sort=createdAt&order=DESC`,
+        `https://stockx.com/api/rest/v2/products/${product}/activity?state=400&currency=${currency}&limit=${limit}&page=${page}&sort=createdAt&order=DESC`,
         {
             headers: {
                 "user-agent":

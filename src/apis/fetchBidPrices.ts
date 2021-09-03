@@ -1,11 +1,7 @@
-const axios = require("axios");
+import axios from 'axios';
 
 // returns single sku bid prices
-module.exports = async (product, currency = 'EUR', limit = 250, page = 1) => {
-    if (typeof product === "object" && product !== null) {
-        product = product.searchKey;
-    }
-
+export default async (product: string, currency = 'EUR', limit = 250, page = 1) => {
     const res = await axios.get(
         `https://stockx.com/api/rest/v2/products/${product}/activity?state=300&currency=${currency}&limit=${limit}&page=${page}&sort=createdAt&order=DESC`,
         {

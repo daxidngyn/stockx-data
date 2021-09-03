@@ -1,10 +1,7 @@
-const axios = require("axios");
+import axios from "axios";
+import {ProductWithMarketAndSizeMap} from "../interfaces";
 
-module.exports = async (product) => {
-    if (typeof product === "object" && product !== null) {
-        product = product.searchKey;
-    }
-
+export default async (product: string): Promise<ProductWithMarketAndSizeMap> => {
     const res = await axios.get(
         `https://stockx.com/api/products/${product}?includes=market`,
         {
@@ -29,6 +26,7 @@ module.exports = async (product) => {
 
     let sizeMap = {};
     Object.keys(productDetails.children).map((id) => {
+        // @ts-ignore
         sizeMap[productDetails.children[id].shoeSize] = id;
     });
 

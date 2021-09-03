@@ -10,9 +10,10 @@ const requestOptions = {
     headers: {"X-Algolia-UserToken": "xw7sbct9v6"},
 };
 
-module.exports = async (query) => {
+export default async (query: string) => {
     const res = await stockxIndex.search(query, requestOptions);
-    const productArray = res.hits.map((product) => {
+    // TODO improve mapping
+    const productArray = res.hits.map((product: any) => {
         return {
             name: product.name,
             pid: product.style_id,
