@@ -1,6 +1,8 @@
 # StockX-Data
  Unofficial StockX API to obtain product data through requests/promises.
  
+ Created by @daxidngyn. No longer being maintained as of June 18, 2022 but feel free to fork!
+ 
  ## Searching for products
  The `searchProducts` method simulates StockX's own search feature. This method takes in one parameter, the query, and returns an array of up to 20 product objects.
  ```js
